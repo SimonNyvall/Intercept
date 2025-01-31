@@ -1,0 +1,13 @@
+<div class="input-group">
+    <select value.bind="selectedTab">
+        <option repeat.for="tab of tabs" model.bind="tab">${tab}</option>
+</div>
+
+
+<h1>Tab Component Example</h1>
+
+<tabs active-tab.bind="tabs[0]">
+<tab name="Tab 1" active-tab.bind="tabs[0]">Content of Tab 1</tab>
+<tab name="Tab 2" active-tab.bind="tabs[0]">Content of Tab 2</tab>
+<tab name="Tab 3" active-tab.bind="tabs[0]">Content of Tab 3</tab>
+</tabs>

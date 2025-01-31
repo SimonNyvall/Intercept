@@ -1,0 +1,19 @@
+<template>
+  <div class="tabs">
+    <!-- Tab headers -->
+    <div class="tab-headers">
+      <button
+        repeat.for="tab of tabs"
+        class="tab-header ${tab === activeTab ? 'active' : ''}"
+        click.delegate="setActiveTab(tab)"
+      >
+        ${tab}
+      </button>
+    </div>
+
+    <!-- Tab content -->
+    <div class="tab-content">
+      <slot></slot> <!-- This is where the tab panels will be displayed -->
+    </div>
+  </div>
+</template>
