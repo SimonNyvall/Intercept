@@ -1,0 +1,23 @@
+<template>
+  <div class="table-component">
+    <div repeat.for="keyValue of keyValuePairs" class="table-content">
+      <input
+        class="table-input-checkbox"
+        type="checkbox"
+        value.bind="keyValue.isSelected"/>
+      <input 
+        class="table-input-text" 
+        type="text" 
+        placeholder="Key"
+        value.bind="keyValue.key"
+        change.trigger="onInputChange()"/>
+      <input 
+        class="table-input-text" 
+        type="text" 
+        placeholder="Value" 
+        value.bind="keyValue.value"
+        change.trigger="onInputChange(keyValue.id)"/>
+      <button click.trigger="removeKeyValuePair()" class="table-input-button">x</button>
+    </div>
+  </div>
+</template>

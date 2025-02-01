@@ -1,0 +1,40 @@
+.tab-request {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+    .tab-request-buttons {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #e1e4e8; 
+    }
+
+    .tab-request-buttons-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    .tab-request-button {
+        margin-right: 10px;
+        cursor: pointer;
+        padding: 8px 16px; 
+        border-bottom: 2px solid transparent; 
+    }
+
+    .tab-request-button a {
+        text-decoration: none;
+        color: #294549; 
+        font-weight: 600; 
+    }
+
+    .tab-request-button.active {
+        border-bottom-color: #294549; 
+    }
+
+    .tab-request-button.active a {
+        color: #24292e; 
+    }
+}

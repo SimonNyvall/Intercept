@@ -1,0 +1,40 @@
+.table-component {
+    .table-content {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .table-input-checkbox {
+        margin-right: 10px;
+    }
+
+    .table-input-text {
+        border: none;
+        border-bottom: 2px solid #ccc;
+        padding: 10px; 
+        margin-right: 10px;
+        outline: none;
+        transition: border-color 0.3s;
+        flex: 1; 
+
+        &:focus {
+            border-bottom-color: #294549;
+        }
+    }
+
+    .table-input-button {
+        background: none;
+        border: none;
+        color: #d73a49;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 5px;
+        transition: color 0.3s;
+        margin-right: 20px;
+
+        &:hover {
+            color: #b31d28;
+        }
+    }
+}
