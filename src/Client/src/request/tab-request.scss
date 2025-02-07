@@ -1,40 +1,72 @@
 .tab-request {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .tab-request-buttons {
     display: flex;
-    flex-direction: column;
-    margin-left: 20px;
+    flex-direction: row;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #3c3c3c; // Subtle border for separation
+  }
 
-    .tab-request-buttons {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 10px;
-        border-bottom: 1px solid #e1e4e8; 
+  .tab-request-buttons-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  .tab-request-button {
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-bottom: 2px solid transparent;
+    position: relative; 
+    transition: all 0.2s ease; 
+
+    a {
+      text-decoration: none;
+      color: #b4b3b3; 
+      font-weight: 600;
+      transition: color 0.3s ease; 
     }
 
-    .tab-request-buttons-list {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
+    &:hover {
+      a {
+        color: #4477ac;
+      }
     }
 
-    .tab-request-button {
-        margin-right: 10px;
-        cursor: pointer;
-        padding: 8px 16px; 
-        border-bottom: 2px solid transparent; 
-    }
+    &.active {
+  border-bottom-color: #31557c;
 
-    .tab-request-button a {
-        text-decoration: none;
-        color: #294549; 
-        font-weight: 600; 
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 6px; 
+    background: rgba(65, 113, 164, 0.5);
+    filter: blur(10px);
+    z-index: -1; 
+    transition: all 0.2s ease; 
+  }
+}
 
-    .tab-request-button.active {
-        border-bottom-color: #294549; 
-    }
 
-    .tab-request-button.active a {
-        color: #24292e; 
+    &.active a {
+      color: #ffffff; 
     }
+  }
+}
+
+.tab-content {
+  background-color: #1e1e1e; 
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  color: #d4d4d4; 
 }

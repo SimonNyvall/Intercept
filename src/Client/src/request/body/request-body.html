@@ -1,0 +1,21 @@
+<template>
+  <div class="request-body">
+    <!-- Radio buttons -->
+    <div>
+      <select value.bind="type">
+        <option value="None">None</option>
+        <option value="Json">Json</option>
+        <option value="Text">Text</option>
+        <option value="Html">Html</option>
+        <option value="Xml">Xml</option>
+      </select>
+    </div>
+
+    <!-- Editor container -->
+    <div class="textarea-container">
+      <div id="editor" ref="editorContainer" class="editor-container">
+        <!-- Editor content goes here -->
+      </div>
+    </div>
+  </div>
+</template>

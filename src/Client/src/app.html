@@ -6,7 +6,7 @@
         <option>PATCH</option>
         <option>DELETE</option>
     </select>
-    <input type="text" placeholder="http://example.com">
+    <input type="text" placeholder="Enter URL">
     <div>
         <button click.trigger="sendRequest()">Send</button>
     </div>
@@ -17,5 +17,7 @@
         request.bind="request"></tab-request>
 </div>
 
-
+<div class="sliding-panel" ref="slidingPanel">
+    <div class="resize-handle" ref="resizeHandle"></div>
+</div>
 

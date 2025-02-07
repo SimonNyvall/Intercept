@@ -9,7 +9,8 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@aurelia/router": "latest",
-    "aurelia": "latest"
+    "aurelia": "latest",
+    "monaco-editor": "^0.52.2"
   },
   "devDependencies": {
     "@aurelia/testing": "latest",

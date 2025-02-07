@@ -2,11 +2,13 @@ import { bindable } from "aurelia";
 import { RequestEntity } from "../entities/request-entity";
 import { RequestHeaders } from "./headers/request-headers";
 import { RequestQuery } from "./query/request-query";
+import { RequestBody } from "./body/request-body";
 
 export class TabRequest {
     static dependencies = [
         RequestQuery,
-        RequestHeaders
+        RequestHeaders,
+        RequestBody
     ]
 
     @bindable public request: RequestEntity;

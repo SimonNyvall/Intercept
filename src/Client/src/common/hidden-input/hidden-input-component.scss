@@ -1,0 +1,13 @@
+.hidden-input-component-text {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 10px; 
+    margin-right: 10px;
+    outline: none;
+    transition: border-color 0.3s;
+    flex: 1; 
+
+    &:focus {
+        border-bottom-color: #294549;
+    }
+}

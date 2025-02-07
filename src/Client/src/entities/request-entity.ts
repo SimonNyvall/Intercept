@@ -1,3 +1,4 @@
+import { BodyEntiry } from "./body-entity";
 import { KeyValueEntity } from "./key-value-entity";
 
 export class RequestEntity {
@@ -7,4 +8,5 @@ export class RequestEntity {
     public method: string = 'GET';
     public headers: KeyValueEntity[] = [];
     public queryParameters: KeyValueEntity[] = [];
+    public body: BodyEntiry = new BodyEntiry();
 }
