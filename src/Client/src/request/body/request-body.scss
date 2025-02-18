@@ -20,6 +20,7 @@
     font-size: 14px;
     line-height: 1.5;
     overflow: auto;
+    transition: border-color 0.2s ease;
 
     &:focus-within {
       border-color: #569cd6; 
@@ -37,6 +38,7 @@
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: 10px;
+    transition: border-color 0.2s ease;
 
     &:focus {
       border-color: #569cd6;
