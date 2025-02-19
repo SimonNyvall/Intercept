@@ -27,28 +27,4 @@
       box-shadow: 0 0 5px #3794ff; 
     }
   }
-
-  select {
-    background-color: #1e1e1e;
-    color: #d4d4d4;
-    border: 1px solid #3c3c3c;
-    border-radius: 4px;
-    padding: 10px 15px;
-    font-family: Consolas, 'Courier New', monospace;
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 10px;
-    transition: border-color 0.2s ease;
-
-    &:focus {
-      border-color: #569cd6;
-      box-shadow: 0 0 5px #3794ff;
-      outline: none;
-    }
-
-    option {
-      background-color: #1e1e1e; 
-      color: #d4d4d4;
-    }
-  }
 }

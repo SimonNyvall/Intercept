@@ -2,13 +2,9 @@
   <div class="request-body">
     <!-- Radio buttons -->
     <div>
-      <select value.bind="type">
-        <option value="None">None</option>
-        <option value="Json">JSON</option>
-        <option value="Text">Plain Text</option>
-        <option value="Html">HTML</option>
-        <option value="Xml">XML</option>
-      </select>
+      <grouped-dropdown 
+        options.bind="bodyTypeOptions"
+        selected-value.two-way="selectedBodyType"></grouped-dropdown>
     </div>
 
     <!-- Editor container -->

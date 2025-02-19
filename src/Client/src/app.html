@@ -5,9 +5,9 @@
 </div>
 
 <div class="input-group">
-    <dropdown
+    <http-dropdown
         options.bind="httpMethods"
-        selected-value.two-way="type"></dropdown>
+        selected-value.two-way="type"></http-dropdown>
     <input type="text" placeholder="Enter URL">
     <div>
         <button click.trigger="sendRequest()">Send</button>

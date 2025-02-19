@@ -1,11 +1,11 @@
-import { Dropdown } from "./common/dropdown/dropdown";
+import { HttpDropdown } from "./common/dropdowns/http-dropdown/http-dropdown";
 import { RequestEntity } from "./entities/request-entity";
 import { TabRequest } from "./request/tab-request";
 
 export class App {
     static dependencies = [
         TabRequest,
-        Dropdown
+        HttpDropdown
     ];
 
     public request: RequestEntity = new RequestEntity();
