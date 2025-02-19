@@ -1,10 +1,10 @@
-import { bindable } from "aurelia";
+import { bindable, BindingMode } from "aurelia";
 import * as monaco from 'monaco-editor';
 import { GroupedDropdown } from "../../common/dropdowns/grouped-dropdown/grouped-dropdown";
 
 export class RequestBody {
-    @bindable public selectedBodyType: string = 'no-body';
-    @bindable public content: string = '';
+    @bindable({ mode: BindingMode.twoWay }) public selectedBodyType: string = 'no-body';
+    @bindable({ mode: BindingMode.twoWay }) public content: string = '';
 
     static dependencies = [
         GroupedDropdown
@@ -36,44 +36,54 @@ export class RequestBody {
     private editorContainer: HTMLElement;
 
     public attached(): void {
-        this.initializeEditor();
+        try {
+            this.initializeEditor();
+        // eslint-disable-next-line no-empty
+        } catch  {}
     }
 
     private initializeEditor(): void {
-        this.editor = monaco.editor.create(this.editorContainer, {
-            value: this.content,
-            language: 'json',
-            theme: 'vs-dark',
-            automaticLayout: true,
-            minimap: { enabled: false } 
-        });
+        try {
+            this.editor = monaco.editor.create(this.editorContainer, {
+                value: this.content,
+                language: 'json',
+                theme: 'vs-dark',
+                automaticLayout: true,
+                minimap: { enabled: false } 
+            });
 
-        this.editor.onDidChangeModelContent(() => {
-            this.content = this.editor.getValue();
-        })
+            this.editor.onDidChangeModelContent(() => {
+                this.content = this.editor.getValue();
+            })
+        // eslint-disable-next-line no-empty
+        } catch {}
+
     }
 
     public selectedBodyTypeChanged(newValue: string): void {
-        let language = 'plaintext';
-        switch (newValue) {
-            case 'json':
-                language = 'json';
-                break;
-            case 'xml':
-                language = 'xml';
-                break;
-            case 'yaml':
-                language = 'yaml';
-                break;
-            case 'plain-text':
-                language = 'plaintext';
-                break;
-            case 'no-body':
-                language = 'plaintext';
-                break;
-            default:
-                language = 'plaintext';
-        }
-        monaco.editor.setModelLanguage(this.editor.getModel(), language);
+        try {
+            let language = 'plaintext';
+            switch (newValue) {
+                case 'json':
+                    language = 'json';
+                    break;
+                case 'xml':
+                    language = 'xml';
+                    break;
+                case 'yaml':
+                    language = 'yaml';
+                    break;
+                case 'plain-text':
+                    language = 'plaintext';
+                    break;
+                case 'no-body':
+                    language = 'plaintext';
+                    break;
+                default:
+                    language = 'plaintext';
+            }
+            monaco.editor.setModelLanguage(this.editor.getModel(), language);
+        // eslint-disable-next-line no-empty
+        } catch {}
     }
 }

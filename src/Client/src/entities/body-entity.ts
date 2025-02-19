@@ -1,4 +1,4 @@
 export class BodyEntiry {
-    public type: string = '';
+    public type: string = 'no-body';
     public content: string = '';
 }
