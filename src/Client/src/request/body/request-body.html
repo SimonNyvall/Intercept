@@ -8,8 +8,8 @@
     </div>
 
     <!-- Editor container -->
-    <div class="textarea-container">
-      <div id="editor" ref="editorContainer" class="editor-container">
+    <div show.bind="selectedBodyType !== 'no-body'" class="textarea-container">
+      <div ref="editorContainer" class="editor-container">
         <!-- Editor content goes here -->
       </div>
     </div>

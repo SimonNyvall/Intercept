@@ -3,7 +3,7 @@ import * as monaco from 'monaco-editor';
 import { GroupedDropdown } from "../../common/dropdowns/grouped-dropdown/grouped-dropdown";
 
 export class RequestBody {
-    @bindable public type: string = 'None'; 
+    @bindable public selectedBodyType: string = 'no-body';
     @bindable public content: string = '';
 
     static dependencies = [
@@ -31,7 +31,6 @@ export class RequestBody {
             ]
         }
     ];
-    public selectedBodyType: string = 'json';
 
     private editor: monaco.editor.IStandaloneCodeEditor;
     private editorContainer: HTMLElement;
@@ -52,5 +51,29 @@ export class RequestBody {
         this.editor.onDidChangeModelContent(() => {
             this.content = this.editor.getValue();
         })
+    }
+
+    public selectedBodyTypeChanged(newValue: string): void {
+        let language = 'plaintext';
+        switch (newValue) {
+            case 'json':
+                language = 'json';
+                break;
+            case 'xml':
+                language = 'xml';
+                break;
+            case 'yaml':
+                language = 'yaml';
+                break;
+            case 'plain-text':
+                language = 'plaintext';
+                break;
+            case 'no-body':
+                language = 'plaintext';
+                break;
+            default:
+                language = 'plaintext';
+        }
+        monaco.editor.setModelLanguage(this.editor.getModel(), language);
     }
 }
