@@ -1,4 +1,4 @@
-import { bindable } from "aurelia";
+import { bindable, BindingMode } from "aurelia";
 import { RequestEntity } from "../entities/request-entity";
 import { RequestHeaders } from "./headers/request-headers";
 import { RequestQuery } from "./query/request-query";
@@ -13,7 +13,7 @@ export class TabRequest {
 
     @bindable public request: RequestEntity;
 
-    public showQuery: boolean = true;
+    @bindable({ mode: BindingMode.twoWay }) public showQuery: boolean = true;
     public showHeaders: boolean = false;
     public showAuth: boolean = false;
     public showBody: boolean = false;

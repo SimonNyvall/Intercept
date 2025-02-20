@@ -8,6 +8,20 @@
 
     .table-input-checkbox {
         margin-right: 10px;
+        appearance: none;
+        width: 14px;
+        height: 14px;
+        border: 2px solid #3c3c3c;
+        border-radius: 3px;
+        background-color: #252526;
+        cursor: pointer;
+        position: relative;
+        transition: background-color 0.3s, border-color 0.3s;
+
+        &:checked {
+            background-color: #31557c;
+            border-color: #005a9e;
+        }
     }
 
     .table-input-text {
@@ -25,6 +39,10 @@
             border-bottom-color: #31557c;
             background-color: #333333;
         }
+    }
+
+    .table-remove-spacing {
+        margin-right: 45px;
     }
 
     .table-input-button {

@@ -4,20 +4,25 @@
       <input
         class="table-input-checkbox"
         type="checkbox"
-        value.bind="keyValue.isSelected"/>
+        checked.bind="keyValue.isSelected"
+        change.trigger="onChackboxChange()"/>
       <input 
         class="table-input-text" 
         type="text" 
         placeholder="Key"
         value.bind="keyValue.key"
-        change.trigger="onInputChange()"/>
+        keyup.trigger="onInputChange($event, keyValue)"/>
       <input 
         class="table-input-text" 
         type="text" 
         placeholder="Value" 
         value.bind="keyValue.value"
-        change.trigger="onInputChange(keyValue.id)"/>
-      <button click.trigger="removeKeyValuePair()" class="table-input-button"><img class="trashcan" src="../../../assets/trashcan.png"/></button>
+        keyup.trigger="onInputChange($event, keyValue)"/>
+      <div if.bind="!shouldShowRemoveButton(keyValue.id)" class="table-remove-spacing"></div>
+      <button else
+        click.trigger="removeKeyValuePair(keyValue.id)" 
+        class="table-input-button"><img class="trashcan" src="../../../assets/trashcan.png"/>
+      </button>
     </div>
   </div>
 </template>

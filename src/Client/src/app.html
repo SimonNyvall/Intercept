@@ -8,7 +8,7 @@
     <http-dropdown
         options.bind="httpMethods"
         selected-value.two-way="type"></http-dropdown>
-    <input type="text" placeholder="Enter URL">
+    <input value.bind="request.url" type="text" placeholder="Enter URL">
     <div>
         <button click.trigger="sendRequest()">Send</button>
     </div>
@@ -16,7 +16,7 @@
 
 <div>
     <tab-request
-        request.bind="request"></tab-request>
+        request.bind="request" show-query.bind="isQueryTabOpen"></tab-request>
 </div>
 
 <div class="sliding-panel" ref="slidingPanel">
