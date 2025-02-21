@@ -8,7 +8,7 @@ export class TableComponent {
   private _eventAggregator: EventAggregator;
   private _previousValues: Map<string, { key: string, value: string }> = new Map();
 
-  constructor(eventAggregator: EventAggregator ) {
+  constructor(eventAggregator: EventAggregator) {
     this._eventAggregator = eventAggregator;
   }
 
@@ -71,7 +71,6 @@ export class TableComponent {
     }
 
     if (!keyValue.isSelected && previousKeyLength + previousValueLength === 0 && newValue.length >= 1) {
-      console.log('here');
       keyValue.isSelected = true;
     }
 
@@ -83,9 +82,15 @@ export class TableComponent {
       return;
     }
 
+    const activeElement = document.activeElement?.id;
+
     this._addEmptyRow();
+
     setTimeout(() => {
-      target.focus();
+      const rowElement = document.getElementById(activeElement);
+      if (rowElement) {
+        rowElement.focus();
+      }
     }, 0);
 
     this._previousValues.set(keyValue.id, { key: keyValue.key, value: keyValue.value }); 
