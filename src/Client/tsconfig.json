@@ -7,10 +7,11 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "importHelpers": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "outDir": "./dist"
   },
   "include": [
-    "src"
+    "src/**/*.ts"
   ],
   "files": [
     "src/resource.d.ts"

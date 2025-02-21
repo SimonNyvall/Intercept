@@ -1,19 +1,24 @@
 import { defineConfig } from 'vite';
-import { nodePolyfills } from 'vite-plugin-node-polyfills'
 import aurelia from '@aurelia/vite-plugin';
 
 export default defineConfig({
+  base: './', // 👈 Set base to a relative path for Electron
   server: {
-    open: !process.env.CI,
     port: 9000,
   },
-  esbuild: {
-    target: 'es2022'
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name].[hash][extname]',
+        chunkFileNames: 'assets/[name].[hash].js',
+        entryFileNames: 'assets/[name].[hash].js',
+      },
+    },
   },
   plugins: [
-    aurelia({
-      useDev: true,
-    }),
-    nodePolyfills(),
+    aurelia({ useDev: true }),
   ],
 });

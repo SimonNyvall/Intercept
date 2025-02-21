@@ -1,6 +1,5 @@
 import Aurelia from 'aurelia';
 import { App } from './app';
-import 'monaco-editor/esm/vs/editor/editor.main';
 
 self.MonacoEnvironment = {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
