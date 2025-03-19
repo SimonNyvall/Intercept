@@ -1,0 +1,34 @@
+<template>
+    <div class="tab-request">
+        <div class="tab-request-buttons">
+            <ul class="tab-request-buttons-list">
+                <li class="${showQuery ? 'active' : ''} tab-request-button">
+                    <a click.trigger="triggerQueryTab()">Query</a>
+                </li>
+                <li class="${showHeaders ? 'active' : ''} tab-request-button">
+                    <a click.trigger="triggerHeadersTab()">Headers</a>
+                </li>
+                <li class="${showAuth ? 'active' : ''} tab-request-button">
+                    <a click.trigger="triggerAuthTab()">Auth</a>
+                </li>
+                <li class="${showBody ? 'active' : ''} tab-request-button">
+                    <a click.trigger="triggerBodyTab()"><span class="icon">Body</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div show.bind="showQuery">
+                <request-query request.bind="request"></request-query>
+            </div>
+            <div show.bind="showHeaders">
+                <request-headers headers.bind="request.headers"></request-headers>
+            </div>
+            <div show.bind="showAuth">
+                <request-auth selected-auth-type.two-way="request.auth.type" auth.two-way="request.auth"></request-auth>
+            </div>
+            <div show.bind="showBody">
+                <request-body selected-body-type.two-way="request.body.type" content.two-way="request.body.content"></request-body>
+            </div>
+        </div>
+    </div>
+</template>

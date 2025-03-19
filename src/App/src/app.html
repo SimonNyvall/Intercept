@@ -1,0 +1,26 @@
+<div class="name-container">
+    <span><img class="httplogo" src="../assets/HTTPlogo.png"/></span>
+    <h4 if.bind="!isEditingName" click.trigger="editRequestName()">${requestName}</h4>
+    <input if.bind="isEditingName" value.bind="requestName" blur.trigger="saveRequestName()" focus.trigger="selectText($event)" ref="requestNameInput" type="text"/>
+</div>
+
+<div class="input-group">
+    <http-dropdown
+        options.bind="httpMethods"
+        selected-value.two-way="type"></http-dropdown>
+    <input value.bind="request.url" type="text" placeholder="Enter URL">
+    <div>
+        <button click.trigger="sendRequest()">Send</button>
+    </div>
+</div>
+
+<div>
+    <tab-request
+        request.bind="request"></tab-request>
+</div>
+
+<div class="sliding-panel" ref="slidingPanel">
+    <div class="resize-handle" ref="resizeHandle"></div>
+    This is a test
+</div>
+

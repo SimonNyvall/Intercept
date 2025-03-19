@@ -1,0 +1,19 @@
+<template>
+    <div class="grouped-dropdown" tabindex="0" keydown.trigger="onKeyDown($event)">
+        <div class="dropdown-selected" click.trigger="toggleDropdown()">
+            ${selectedLabel}
+            <span class="dropdown-icon">&#9662;</span>
+        </div>
+        <div class="dropdown-options" if.bind="isOpen">
+            <div repeat.for="group of options" class="dropdown-group">
+                <div if.bind="group.label !== ''" class="dropdown-group-label">
+                    <img if.bind="group.imageUrl" src.bind="group.imageUrl" alt="${group.label}" class.bind="group.imageClass">
+                    ${group.label}
+                </div>
+                <div repeat.for="option of group.options" class="dropdown-option" click.trigger="selectOption(option)" tabindex="0">
+                    ${option.label}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

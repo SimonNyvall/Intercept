@@ -1,0 +1,50 @@
+.request-auth {
+    margin-left: 10px;
+    margin-right: 30px;
+    color: #d4d4d4;
+
+
+    .auth-settings {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .enabled {
+        position: relative;
+        top: 8px;
+    }
+
+    .label-text {
+        color: #b4b3b3;
+        font-size: 14px;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .margin-top {
+        margin-top: 20px;
+    }
+
+    .auth-inputs {
+        margin-left: 10px;
+    }
+
+    .checkbox {
+        margin-right: 10px;
+        appearance: none;
+        width: 14px;
+        height: 14px;
+        border: 2px solid #3c3c3c;
+        border-radius: 3px;
+        background-color: #252526;
+        cursor: pointer;
+        position: relative;
+        transition: background-color 0.3s, border-color 0.3s;
+        top: 3px;
+
+        &:checked {
+            background-color: #31557c;
+            border-color: #005a9e;
+        }
+    }
+}

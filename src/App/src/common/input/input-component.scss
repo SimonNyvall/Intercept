@@ -1,0 +1,37 @@
+.input-component {
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    align-items: center;
+    width: 400px;
+
+    .input-component-text {
+        background-color: #252526;
+        border: none;
+        border-bottom: 3px solid #3c3c3c;
+        padding: 10px;
+        color: #D4D4D4;
+        outline: none;
+        transition: border-color 0.3s, background-color 0.3s;
+        width: 100%; 
+
+        &:focus {
+            border-bottom-color: #31557c;
+            background-color: #333333;
+        }
+    }
+
+    .visibility-image {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        margin-left: 10px;
+        position: relative;
+        left: 20px;
+    }
+
+    .placeholder {
+        width: 20px;  
+        height: 20px;
+        margin-left: 10px;
+    }
+}

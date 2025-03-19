@@ -1,0 +1,13 @@
+<template>
+  <div class="request-body">
+    <div>
+      <grouped-dropdown 
+        options.bind="bodyTypeOptions"
+        selected-value.two-way="selectedBodyType"></grouped-dropdown>
+    </div>
+    <div show.bind="selectedBodyType !== 'no-body'" class="textarea-container">
+      <div ref="editorContainer" class="editor-container">
+      </div>
+    </div>
+  </div>
+</template>

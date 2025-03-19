@@ -1,0 +1,10 @@
+<template>
+    <div class="input-component">
+        <input value.bind="value" type.bind="inputType" placeholder.bind="placeholder" class="input-component-text"/>
+        <div if.bind="initialType === 'password'">
+            <img if.bind="inputType === 'password'" click.trigger="togglePasswordVisibility()" class="visibility-image" src="../../../assets/eye.png" />
+            <img else click.trigger="togglePasswordVisibility()" class="visibility-image" src="../../../assets/eye-slash.png" />
+        </div>
+        <div else class="placeholder"></div> <!-- Placeholder for inputs without visibility image -->
+    </div>
+</template>

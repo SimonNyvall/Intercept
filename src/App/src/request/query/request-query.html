@@ -1,0 +1,8 @@
+<template>
+    <div class="query-container">
+        <div class="query-preview-label-box"><label class="query-preview-label">URL Preview</label></div>
+        <input type="text" value.bind="queryPreview" class="query-preview-input" readonly />
+    </div>
+
+    <table-component key-value-pairs.two-way="request.queryParameters"></table-component>
+</template>

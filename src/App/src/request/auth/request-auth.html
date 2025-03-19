@@ -1,0 +1,36 @@
+<template>
+    <div class="request-auth">
+        <div class="auth-settings">
+            <grouped-dropdown
+                options.bind="authTypeOptions"
+                selected-value.two-way="selectedAuthType"></grouped-dropdown>
+            <div if.bind="auth.type !== 'none'" class="enabled">
+                <input checked.bind="auth.enabled" class="checkbox" type="checkbox" />
+                <span>Enabled</span>
+            </div>
+        </div>
+        <div class="auth-inputs">
+            <div if.bind="auth.type === 'basic'">
+                <label class="label-text">Username</label>
+                <input-component value.two-way="username" placeholder.bind="usernamePlaceholder"></input-component>
+                <label class="label-text margin-top">Password</label>
+                <input-component value.two-way="password" input-type.bind="passwordType"></input-component>
+            </div>
+            <div if.bind="auth.type === 'bearer-token'">
+                <label class="label-text">Token</label>
+                <input-component value.bind="token" input-type.bind="passwordType"></input-component>
+                <label class="label-text margin-top">Prefix</label>
+                <input-component value.bind="prefix"></input-component>
+            </div>
+            <div if.bind="auth.type === 'api-key'">
+                <label class="label-text">Key</label>
+                <input-component value.bind="key"></input-component>
+                <label class="label-text margin-top">Value</label>
+                <input-component value.bind="value"></input-component>
+                <grouped-dropdown
+                    options.bind="apiKeyLocationOptions"
+                    selected-value.two-way="selectedApiKeyLocation"></grouped-dropdown>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,30 @@
+<template>
+  <div class="table-component">
+    <div repeat.for="keyValue of keyValuePairs; index as i" id="key-value-pair-${i}" class="table-content">
+      <input
+        class="table-input-checkbox"
+        type="checkbox"
+        checked.bind="keyValue.isSelected"
+        change.trigger="onChackboxChange()"/>
+      <input
+        id="key-value-pair-${keyValue.id}-key" 
+        class="table-input-text" 
+        type="text" 
+        placeholder="Key"
+        value.bind="keyValue.key"
+        keyup.trigger="onInputChange($event, keyValue)"/>
+      <input 
+        id="key-value-pair-${keyValue.id}-value"
+        class="table-input-text" 
+        type="text" 
+        placeholder="Value" 
+        value.bind="keyValue.value"
+        keyup.trigger="onInputChange($event, keyValue)"/>
+      <div if.bind="!shouldShowRemoveButton(keyValue.id)" class="table-remove-spacing"></div>
+      <button else
+        click.trigger="removeKeyValuePair(keyValue.id)" 
+        class="table-input-button"><img class="trashcan" src="../../../assets/trashcan.png"/>
+      </button>
+    </div>
+  </div>
+</template>
